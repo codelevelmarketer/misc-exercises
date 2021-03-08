@@ -33,8 +33,11 @@ let str = "";
 
 function checkNumber(number) {
   for (let i = 1; i <= number; i++) {
-    // Identify all numbers divisible by 3
-    if (i % 3 === 0) {
+    // Identify all numbers divisible by 3 & 5
+    if (i % 3 === 0 && i % 5 === 0) {
+      str += "Fizz Buzz" + ", ";
+    } // Identify all numbers divisible by 3
+    else if (i % 3 === 0) {
       // Replace numbers divisble by 3 with the string "Fizz"
       str += "Fizz" + ", ";
       // Identify all numbers divisible by 5
