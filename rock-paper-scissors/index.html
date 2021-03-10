@@ -4,57 +4,32 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/misc-exercises/rock-paper-scissors/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 
   <title>Document</title>
 </head>
 <body>
-  <script src="/misc-exercises/rock-paper-scissors/rock-paper-scissors.js" defer></script>
+  <main id="game-wrapper">
+    <h1 class="game-title">Rock Paper Scissors</h1>
+    <div class="choice-wrapper">
+      <div class="choice"><button class="choice-button" id="btn-rock">Rock</button></div>
+      <div class="choice"><button class="choice-button" id="btn-paper">Paper</button></div>
+      <div class="choice"><button class="choice-button" id="btn-scissors">Scissors</button></div>
+    </div>
+      
+    <div class="round-tracker"><p class="round-text">You selected&nbsp;<span id="player-selection">Rock</span>, Computer selected&nbsp;<span id="computer-selection">Scissors</span>.&nbsp;<span class="round-result">&nbsp;You win this round!</span></p></div>
+
+    <div class="game-tracker">
+      <div class="score-box"><p class="player-score-text">Player Score:&nbsp;<span id="player-score">0</span></p></div>
+      <div class="score-box"><p class="computer-score-text">Computer Score:&nbsp;<span id="computer-score">0</span></p>  </div>
+    </div>
+
+  </main>
+
+
+  <!-- <script src="/misc-exercises/rock-paper-scissors/rock-paper-scissors.js"></script> -->
+  <script src="/misc-exercises/rock-paper-scissors/scripts.js"></script>
 </body>
 </html>
-<!-- /* Problem - Game: Rock Paper Scissors */
-
-// Players need to be able to select a choice, compete against a computer's choice, and see the winner of each round, as well as the game.
-
-/* Plan */
-
-/* Variables - Complete */
-
-// Player choice
-// Computer choice
-// Round result
-// Game result
-
-/* Input Logic */
-// Choices must be case insensitive
-
-/* Functions */
-// Game needs to be initialized with 5 rounds
-// Player needs to be prompted for his/her choice
-// Computer needs to make a choice
-// A result is declared at the end of each round
-// A result is declared at the end of each game
-
-/* Outputs */
-// Player needs to see the computer's choice
-// Player needs to see the outcome of the round
-// Player needs to see the outcome of the game
-
-// Pseudo Code
-
-/* When a player opens the page
-    they will be prompted to start a new game
-      If they accept
-        They will be prompted for a choice
-        When they make a choice,
-        The computer will also make a choice,
-        The computer and player choices will be compared
-        The results will be displayed to the user
-        And the next round will start
-          If it is the 5th round
-          A winner will be declared
-*/
-
-// Code
- -->
-
- 

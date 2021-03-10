@@ -1,47 +1,8 @@
-/* Problem - Game: Rock Paper Scissors */
-
-// Players need to be able to select a choice, compete against a computer's choice, and see the winner of each round, as well as the game.
-
-/* Plan */
-
-/* Variables */
-// Player choice
-// Computer choice
-// Round result
-// Game result
-
-/* Input Logic */
-// Choices must be case insensitive
-
-/* Functions */
-// Game needs to be initialized with 5 rounds
-// Player needs to be prompted for his/her choice
-// Computer needs to make a choice
-// A result is declared at the end of each round
-// A result is declared at the end of each game
-
-/* Outputs */
-// Player needs to see the computer's choice
-// Player needs to see the outcome of the round
-// Player needs to see the outcome of the game
-
-// Pseudo Code
-
-/* When a player opens the page
-    they will be prompted to start a new game
-      If they accept
-        They will be prompted for a choice
-        When they make a choice,
-        The computer will also make a choice,
-        The computer and player choices will be compared
-        The results will be displayed to the user
-        And the next round will start
-          If it is the 5th round
-          A winner will be declared
-*/
-
 // Code
 
+// DOM selectors
+
+// game specific variables
 let playerChoice = "",
   computerChoice = "",
   playerScore = 0,
@@ -104,4 +65,49 @@ function game() {
     }
   }
 }
-game();
+
+// game();
+
+/* ---- Pseudo Code and Planning for Posterity's sake*/
+
+/* Problem - Game: Rock Paper Scissors */
+
+// Players need to be able to select a choice, compete against a computer's choice, and see the winner of each round, as well as the game.
+
+/* Plan */
+
+/* Variables */
+// Player choice
+// Computer choice
+// Round result
+// Game result
+
+/* Input Logic */
+// Choices must be case insensitive
+
+/* Functions */
+// Game needs to be initialized with 5 rounds
+// Player needs to be prompted for his/her choice
+// Computer needs to make a choice
+// A result is declared at the end of each round
+// A result is declared at the end of each game
+
+/* Outputs */
+// Player needs to see the computer's choice
+// Player needs to see the outcome of the round
+// Player needs to see the outcome of the game
+
+// Pseudo Code
+
+/* When a player opens the page
+    they will be prompted to start a new game
+      If they accept
+        They will be prompted for a choice
+        When they make a choice,
+        The computer will also make a choice,
+        The computer and player choices will be compared
+        The results will be displayed to the user
+        And the next round will start
+          If it is the 5th round
+          A winner will be declared
+*/

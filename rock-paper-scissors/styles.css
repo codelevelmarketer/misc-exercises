@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  background: #f0efeb;
+  height: 100vh;
+  font-size: 18px;
+}
+
+/* Game container */
+
+#game-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-title {
+  align-items: flex-start;
+}
+
+/* Choice Styles */
+.choice-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.choice-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #99c1de;
+  width: 20rem;
+  height: 15rem;
+  margin: 50px;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  font-size: 2rem;
+}
+
+.new-game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: ;
+}
+
+.start-game-button {
+  border: 1px solid #99c1de;
+  width: 10rem;
+  height: 7.5rem;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all 0.15s;
+}
+
+#btn-rock {
+  background: #c5dedd;
+}
+
+#btn-rock:hover {
+  background: #a4cbca;
+}
+
+#btn-paper {
+  background: #fad2e1;
+}
+
+#btn-paper:hover {
+  background: #f7b6cd;
+}
+
+#btn-scissors {
+  background: #d6e2e9;
+}
+
+#btn-scissors:hover {
+  background: #bdd0db;
+}
+
+/* Game Results */
+
+.game-tracker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.round-tracker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  width: 50%;
+  height: 5rem;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.round-tracker-won {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  width: 50%;
+  height: 5rem;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  background: #ffdcc2;
+}
+
+.round-tracker-loss {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  width: 50%;
+  height: 5rem;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  background: #d3d0c5;
+}
+
+.round-tracker-draw {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  width: 50%;
+  height: 5rem;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  background: #b6cec8;
+}
+
+.score-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  width: 15rem;
+  height: 5rem;
+  margin: 50px;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Palette https://coolors.co/eddcd2-fff1e6-fde2e4-fad2e1-c5dedd-dbe7e4-f0efeb-d6e2e9-bcd4e6-99c1de */
