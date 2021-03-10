@@ -1,122 +1,109 @@
-// Global Game Variables
-
-let playerChoice,
-  computerChoice,
-  playerPoints = 0,
-  computerPoints = 0,
-  currentRound = 0;
-
 // DOM Variables
-const rockbtn = document.querySelector("#btn-rock");
-const paperbtn = document.querySelector("#btn-paper");
-const scissorsbtn = document.querySelector("#btn-scissors");
+
 const buttons = document.querySelectorAll("button");
-const computerResult = document.querySelector("#computer-score");
-const playerResult = document.querySelector("#player-score");
-const computerSelection = document.querySelector("#computer-selection");
-const playerSelection = document.querySelector("#player-selection");
-const roundText = document.querySelector(".round-text");
-const playerScoreText = document.querySelector(".player-score-text");
-const computerScoreText = document.querySelector(".computer-score-text");
-const roundResult = document.querySelector(".round-result");
-const computerPointsResult = document.querySelector("#computer-score");
-const playerPointsResult = document.querySelector("#player-score");
-const roundTracker = document.querySelector(".round-tracker");
+const playerScoreText = document.querySelector(".player-points");
+const computerScoreText = document.querySelector(".computer-points");
+const resultOutcome = document.querySelector(".results");
 
-roundText.style.display = "none";
-playerScoreText.style.display = "none";
-computerScoreText.style.display = "none";
+// Global Variables
 
-// Game functions
+let computerChoice,
+  playerChoice,
+  resultText,
+  gameOver = false,
+  playerScore = 0,
+  computerScore = 0;
+
+// Game Functions
+
+function playerTurn(choice) {
+  if (gameOver === true) {
+    alert("Restarting the game!");
+    startGame();
+  } else {
+    computerPlay();
+    playRound(playerChoice, computerChoice);
+  }
+}
+
 function computerPlay() {
   let num = Math.floor(Math.random() * 3 + 1);
-  computerChoice = num === 1 ? "Rock" : num === 2 ? "Paper" : "Scissors";
-  computerSelection.innerHTML = `${computerChoice}`;
+  let computerSelection = num === 1 ? "Rock" : num === 2 ? "Paper" : "Scissors";
+  computerChoice = computerSelection;
   return computerChoice;
 }
 
-// Event Handlers
-
-function playerTurn(choice) {
-  if (choice == "btn-rock") {
-    playerChoice = "Rock";
-  } else if (choice == "btn-paper") {
-    playerChoice = "Paper";
-  } else {
-    playerChoice = "Scissors";
-  }
-  playerSelection.innerHTML = `${playerChoice}`;
-  computerPlay();
-  roundText.style.display = "flex";
-  playerScoreText.style.display = "flex";
-  computerScoreText.style.display = "flex";
-  playRound(playerChoice, computerChoice);
-}
-
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    playerTurn(button.id);
-  });
-});
-
 function playRound(playerSelection, computerSelection) {
-  let result;
   if (
     (playerChoice === "Rock" && computerChoice === "Scissors") ||
     (playerChoice === "Scissors" && computerChoice == "Paper") ||
     (playerChoice === "Paper" && computerChoice === "Rock")
   ) {
-    result = "You won this round!";
+    result = "Won";
   } else if (
     (playerChoice === "Scissors" && computerChoice === "Rock") ||
     (playerChoice === "Paper" && computerChoice == "Scissors") ||
     (playerChoice === "Rock" && computerChoice === "Paper")
   ) {
-    result = "You lost this round";
+    result = "Loss";
   } else {
-    result = "Draw.";
+    result = "Draw";
   }
-  if (result === "You won this round!") {
-    playerPoints = ++playerPoints;
-  } else if (result === "You lost this round") {
-    computerPoints = ++computerPoints;
+  resultText =
+    result === "Won"
+      ? `${playerSelection} beats ${computerSelection}. You win!`
+      : result === "Loss"
+      ? `${playerSelection} losses to ${computerSelection}. You lose.`
+      : `You both picked ${playerSelection}. Draw.`;
+  resultOutcome.textContent = resultText;
+  if (result === "Won") {
+    playerScoreText.textContent = ++playerScore;
+  } else if (result === "Loss") {
+    computerScoreText.textContent = ++computerScore;
   }
-  computerPointsResult.textContent = `${computerPoints}`;
-  playerPointsResult.textContent = `${playerPoints}`;
-  roundResult.innerHTML = `${result}`;
-  currentRound = ++currentRound;
-  if (currentRound === 5) {
-    gameCheck(playerPoints, computerPoints);
+  checkWinner();
+}
+
+function startGame() {
+  playerChoice = "";
+  computerChoice = "";
+  playerScore = 0;
+  computerScore = 0;
+  playerScoreText.textContent = playerScore;
+  computerScoreText.textContent = computerScore;
+  resultOutcome.textContent = "Pick an option to start!";
+  gameOver = false;
+  console.log("Game Restarted");
+}
+
+function checkWinner() {
+  if (playerScore === 5) {
+    gameOver = true;
+    resultOutcome.textContent = "You won the game. Congrats!";
+  } else if (computerScore === 5) {
+    gameOver = true;
   }
 }
 
-function gameCheck(playerPoints, computerPoints) {
-  if (currentRound === 5) {
-    if (playerPoints > computerPoints) {
-      roundTracker.classList.add("round-tracker-won");
-      alert(`You won ${playerPoints} - ${computerPoints}`);
-    } else if (playerPoints < computerPoints) {
-      roundTracker.classList.add("round-tracker-loss");
-      alert(`You lost ${playerPoints} - ${computerPoints}`);
+// Event listeners
+
+buttons.forEach((button) => {
+  playerChoice = "";
+  button.addEventListener("click", () => {
+    playerChoice =
+      button.id === "btn-rock"
+        ? "Rock"
+        : button.id === "btn-paper"
+        ? "Paper"
+        : button.id === "btn-scissors"
+        ? "Scissors"
+        : "Restart";
+    if (playerChoice === "Restart") {
+      startGame();
     } else {
-      roundTracker.classList.add("round-tracker-draw");
-      alert(
-        `Draw! You scored ${playerPoints},the computer scored ${computerPoints}`
-      );
+      playerTurn(playerChoice);
     }
-  }
-}
+  });
+});
 
-function gameReset() {
-  roundText.style.display = "none";
-  playerScoreText.style.display = "none";
-  computerScoreText.style.display = "none";
-  computerPoints = 0;
-  playerPoints = 0;
-  roundTracker.classList.remove("round-tracker-draw");
-  roundTracker.classList.remove("round-tracker-won");
-  roundTracker.classList.remove("round-tracker-loss");
-  computerPointsResult.textContent = `${computerPoints}`;
-  playerPointsResult.textContent = `${playerPoints}`;
-  currentRound = 0;
-}
+buttons.forEach;

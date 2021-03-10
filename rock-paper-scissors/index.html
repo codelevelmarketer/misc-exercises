@@ -5,31 +5,42 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/misc-exercises/rock-paper-scissors/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-
-  <title>Document</title>
+  <title>Rock Paper Scissors</title>
 </head>
-<body>
-  <main id="game-wrapper">
-    <h1 class="game-title">Rock Paper Scissors</h1>
-    <div class="choice-wrapper">
-      <div class="choice"><button class="choice-button" id="btn-rock">Rock</button></div>
-      <div class="choice"><button class="choice-button" id="btn-paper">Paper</button></div>
-      <div class="choice"><button class="choice-button" id="btn-scissors">Scissors</button></div>
+<body class="wrapper">
+  <main>
+    <div class="main-text">
+      <h1>Rock Paper Scisssors</h1>
+      <h2>First to 5 wins!</h2>
+      <h3>Choose your weapon</h3>
     </div>
-      
-    <div class="round-tracker"><p class="round-text">You selected&nbsp;<span id="player-selection">Rock</span>, Computer selected&nbsp;<span id="computer-selection">Scissors</span>.&nbsp;<span class="round-result">&nbsp;You win this round!</span></p></div>
+    
+    <div class="game-wrapper">
+      <button class="btn-choice" id="btn-rock">Rock</button>
+      <button class="btn-choice" id="btn-paper">Paper</button>
+      <button class="btn-choice" id="btn-scissors">Scissors</button>
+    </div>
 
-    <div class="game-tracker">
-      <div class="score-box"><p class="player-score-text">Player Score:&nbsp;<span id="player-score">0</span></p></div>
-      <div class="score-box"><p class="computer-score-text">Computer Score:&nbsp;<span id="computer-score">0</span></p>  </div>
+    <div class="score">
+      
+      <div class="score-box">
+        <p>Player Score</p>
+        <div class="player-points">0</div>
+        </div>
+      <div class="score-box"><p>Computer Score</p>
+        <div class="computer-points">0</div>
+        </div></div>
     </div>
+
+    <div class="med-gap"></div>
+
+    <div class="results">Pick an option to start!</div>
+
+    <div class="restart"><button id="btn-restart">New Game?</button></div>
 
   </main>
-
-
-  <!-- <script src="/misc-exercises/rock-paper-scissors/rock-paper-scissors.js"></script> -->
-  <script src="/misc-exercises/rock-paper-scissors/scripts.js"></script>
+   <script src="/misc-exercises/rock-paper-scissors/scripts.js"></script>
 </body>
 </html>
