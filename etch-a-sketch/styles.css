@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+html {
+  background-image: linear-gradient(
+    90deg,
+    rgba(63, 55, 201, 0.8),
+    rgba(72, 149, 239, 0.5),
+    rgba(72, 12, 168, 0.8)
+  );
+  font-family: "Ubuntu", sans-serif;
+}
+
+.container {
+  display: grid;
+  max-width: 500px;
+  min-height: 500px;
+  margin: 2rem auto;
+  border: 1px solid black;
+}
+
+.grid-cell {
+  display: flex;
+  border: 1px solid black;
+  background: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  width: 100px;
+  background: #4cc9f0;
+  height: 50px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #3a0ca3;
+  font-family: "Ubuntu", sans-serif;
+  margin: 5px;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: #12b2e2;
+  box-shadow: 10px 10px 10px #3a0ca3;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.button-selected {
+  background: #3a0ca3;
+  color: white;
+}
