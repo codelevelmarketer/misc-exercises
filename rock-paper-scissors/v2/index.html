@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+    <title>Rock, Paper, Scissors</title>
+  </head>
+  <body>
+    <div id="game">
+      <section id="game-results">
+        <h1>Rock Paper Scissors</h1>
+        <h2 id="round-result-text">First to 5 wins</h2>
+        <div class="results-container">
+
+          <div class="result-box">
+
+            <div class="result-text"><h3>You: <span id="player-score">0</span></h3></div>
+            <div class="choice-icon" id="player-icon"><i class="fas fa-user"></i>
+
+            </div>
+            <div class="choice-text"><h3><span id="player-choice-text">Human Player</span></h3></div>
+          </div>
+
+          <div class="result-box">
+            <div class="result-text"><h3>Computer: <span id="computer-score">0</span></h3></div>
+            <div class="choice-icon" id="computer-icon"><i class="fas fa-robot"></i>
+
+            </div>
+            <div class="choice-text" ><h3><span id="computer-choice-text">Robot Player</span></h3></div>
+          </div>
+        </div>
+      </section>
+
+
+    </div>
+    
+      <section id="player-select">
+        <h2 id="select-header">Select Your Weapon</h2>
+        <div id="player-buttons">
+          <button class="btn-icon" id="rock">
+            <i class="far fa-hand-rock"></i>
+          </button>
+          <button class="btn-icon" id="paper">
+            <i class="far fa-hand-paper"></i>
+          </button>
+          <button class="btn-icon" id="scissors">
+            <i class="far fa-hand-scissors"></i>
+          </button>
+        </div>
+      </section>
+    
+      <script src="script.js"></script>
+  </body>
+</html>
